@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blossom - Catálogo de Flores Artificiales</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header>
+    <img src="Imagen/BLOSSOM.png" height="200" width="200" alt="Blossom Logo" class="centrar-imagen">
+    <p>Flores eternas con estilo y elegancia</p>
+</header>
+
+<section id="catalogo">
+    <h2>Catálogo de Flores</h2>
+    <div class="producto">
+        <!-- Botón que abre el catálogo -->
+        <button class="producto-boton" onclick="verCatalogo()">Ver catálogo</button>
+        <p>Un elegante set de tres flores perfectas para cualquier ocasión.</p>
+    </div>
+</section>
+
+<section id="contacto">
+    <h2>Contacto</h2>
+    <form id="contactForm" onsubmit="enviarWhatsApp(event)">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required>
+
+        <label for="mensaje">Mensaje:</label>
+        <textarea id="mensaje" name="mensaje" required></textarea>
+
+        <button type="submit">Enviar a WhatsApp</button>
+    </form>
+</section>
+
+<footer>
+    <p>&copy; 2024 Blossom. Todos los derechos reservados.</p>
+</footer>
+
+<!-- Script para abrir el catálogo -->
+<script>
+    function verCatalogo() {
+        window.open('Catalogo.pdf', '_blank');
+    }
+
+    function enviarWhatsApp(event) {
+        event.preventDefault();
+        const nombre = document.getElementById('nombre').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+
+        const numeroWhatsApp = '57 312 3528041'; // Cambia este número por el tuyo
+
+
+        const mensajeWhatsApp = `Hola, soy ${nombre}. ${mensaje}`;
+        const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+
+        window.open(enlaceWhatsApp, '_blank');
+    }
+</script>
+
+</body>
+</html>
+
