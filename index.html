@@ -49,12 +49,9 @@
         const nombre = document.getElementById('nombre').value;
         const mensaje = document.getElementById('mensaje').value;
 
-
-        const numeroWhatsApp = '57 312 3528041'; // Cambia este número por el tuyo
-
-
+        const numeroWhatsApp = '573123528041'; // Número de teléfono sin espacios ni caracteres especiales
         const mensajeWhatsApp = `Hola, soy ${nombre}. ${mensaje}`;
-        const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${57 312 3528041}&text=${encodeURIComponent(mensajeWhatsApp)}`;
+        const enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${numeroWhatsApp}&text=${encodeURIComponent(mensajeWhatsApp)}`;
 
         window.open(enlaceWhatsApp, '_blank');
     }
@@ -62,4 +59,5 @@
 
 </body>
 </html>
+
 
